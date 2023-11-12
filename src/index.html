@@ -4,22 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
-    <link rel="stylesheet" href="./styles.css /" />
     <link
       rel="stylesheet"
       href="../node_modules/notiflix/dist/notiflix-3.2.6.min.css"
     />
+    <link rel="stylesheet" href="./styles.css"></link>
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
+    <header class="header">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </header>
+    <main>
+      <div class="gallery"></div>
+    </main>
     <script src="./index.js" type="module"></script>
     <script src="../node_modules/notiflix/dist/notiflix-3.2.6.min.js"></script>
   </body>

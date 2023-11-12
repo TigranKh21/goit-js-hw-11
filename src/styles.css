@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(64, 77, 239);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  margin-top: 20px;
+  display: flex;
+  justify-content: left;
+  align-items: top;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.photo-card {
+  padding: 2px;
+  box-shadow: 5px 5px 2px grey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 240px;
+  height: 230px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  gap: 5px;
+}
+
+.info-item {
+  text-align: center;
+}
