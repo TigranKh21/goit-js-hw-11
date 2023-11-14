@@ -15,7 +15,7 @@ const params = {
   per_page: 40,
 };
 
-refs = {
+const refs = {
   searchEl: document.getElementById('search-form'),
   galleryEl: document.querySelector('.gallery'),
   loadMoreEl: document.querySelector('.load-more'),
