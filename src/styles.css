@@ -10,20 +10,33 @@
 .gallery {
   margin-top: 20px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: top;
   flex-wrap: wrap;
   gap: 10px;
 }
 .photo-card {
-  padding: 2px;
-  box-shadow: 5px 5px 2px grey;
+  box-shadow: 0px 2px 0px grey;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   width: 240px;
   height: 230px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.image-link {
+  width: 240px;
+  height: 155px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
 }
 
 .info {
@@ -35,4 +48,18 @@
 
 .info-item {
   text-align: center;
+}
+
+.load-more {
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: rgb(64, 77, 239);
+  color: white;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+}
+.js-hidden {
+  display: none;
 }
