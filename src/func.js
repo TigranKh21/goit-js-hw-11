@@ -1,7 +1,11 @@
 import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import Notiflix from 'notiflix';
+
+const gallery = new SimpleLightbox('.image-link a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 
@@ -35,16 +39,11 @@ export function onMarkup(arr) {
 </div>`;
     })
     .join('');
-  console.log(markup);
   return markup;
 }
 
 export function onRender(array, locator) {
   const markup = onMarkup(array);
   locator.insertAdjacentHTML('beforeend', markup);
-  const gallery = new SimpleLightbox('.image-link a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
   gallery.refresh();
 }

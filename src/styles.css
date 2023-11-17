@@ -1,10 +1,23 @@
+body {
+  background-color: black;
+  font-family: Special Elite;
+  margin: 0;
+}
 .header {
   width: 100%;
-  height: 40px;
+  height: 50px;
   background-color: rgb(64, 77, 239);
+  background: linear-gradient(
+    90deg,
+    rgb(228, 227, 236) 0%,
+    rgb(97, 90, 151) 50%,
+    rgb(2, 15, 22) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 .gallery {
@@ -42,23 +55,55 @@ img {
 .info {
   display: flex;
   justify-content: center;
-  font-size: 15px;
+  font-size: 14px;
   gap: 5px;
+  color: darkgray;
 }
 
 .info-item {
   text-align: center;
 }
 
-.load-more {
-  width: 100px;
-  height: 20px;
+button {
+  width: 120px;
+  height: 30px;
+  font-family: Special Elite;
+  font-size: 15px;
+  font-weight: 900;
   border-radius: 5px;
   background-color: rgb(64, 77, 239);
-  color: white;
+  background: linear-gradient(
+    90deg,
+    rgb(191, 184, 244) 0%,
+    rgb(97, 90, 151) 50%,
+    rgb(2, 15, 22) 100%
+  );
+  color: rgb(245, 221, 6);
+}
+input {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  font-family: Special Elite;
+  font-size: 15px;
+}
+.load-more {
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(64, 77, 239);
+  background: linear-gradient(
+    90deg,
+    rgb(191, 184, 244) 0%,
+    rgb(97, 90, 151) 50%,
+    rgb(2, 15, 22) 100%
+  );
+  color: rgb(245, 221, 6);
   margin: 0 auto;
   display: block;
   margin-top: 20px;
+  font-family: Special Elite;
+  font-size: 15px;
 }
 .js-hidden {
   display: none;

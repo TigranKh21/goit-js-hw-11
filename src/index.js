@@ -24,19 +24,26 @@ refs.loadMoreEl.addEventListener('click', onLoadNextPage);
 function onFormSubmit(event) {
   event.preventDefault();
   params.q = event.currentTarget.searchQuery.value;
+  params.page = 1;
   fetchData(params).then(data => {
     const resArray = data.data.hits;
     const foundPosts = data.data.totalHits;
     if (!resArray.length) {
       Notiflix.Notify.failure(
-        'Sorry, there are no images matching your search query. Please try again.'
+        'Sorry, there are no images matching your search query. Please another request.'
       );
+      refs.loadMoreEl.classList.add('js-hidden');
+      return;
     } else {
       Notiflix.Notify.success(`WOW! We found ${foundPosts} images!`);
     }
     refs.galleryEl.innerHTML = '';
     onRender(resArray, refs.galleryEl);
-    refs.loadMoreEl.classList.remove('js-hidden');
+    if (params.page === Math.ceil(data.data.totalHits / params.per_page)) {
+      refs.loadMoreEl.classList.add('js-hidden');
+    } else {
+      refs.loadMoreEl.classList.remove('js-hidden');
+    }
   });
 }
 
@@ -46,7 +53,6 @@ function onLoadNextPage(event) {
   fetchData(params).then(data => {
     const resArray = data.data.hits;
     onRender(resArray, refs.galleryEl);
-    console.log(data.data.totalHits);
     if (params.page === Math.ceil(data.data.totalHits / params.per_page)) {
       refs.loadMoreEl.classList.add('js-hidden');
     }
